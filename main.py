@@ -4,9 +4,9 @@ import pprint
 
 #Zadanie1
 params ={
-    'q': 'html'
+    'q': 'language:html'
 }
-response = requests.get('https://api.github.com', params= params)
+response = requests.get('https://api.github.com/search/repositories', params= params)
 print(response.status_code)
 print(response.json())
 #Zadanie2
@@ -19,7 +19,7 @@ pprint.pprint(response1.json())
 
 #zadanie3
 params3 = {'title': 'foo', 'body': 'bar', 'userId': 1}
-response2 = requests.post('https://jsonplaceholder.typicode.com/posts', params=params3)
+response2 = requests.post('https://jsonplaceholder.typicode.com/posts', json=params3)
 print(response2.status_code)
 pprint.pprint(response2.json())
 
